@@ -50,4 +50,35 @@ foreign key (vrstaRibe) references vrstaRibe(sifra);
 alter table ulov add 
 foreign key (natjecanje) references natjecanje(sifra);
 
+select * from vrstaRibe;
+-- 1
+insert into vrstaRibe(sifra,naziv)
+-- 1 do 6
+values
+(null,'Klen'),
+(null,'Žutooka'),
+(null,'Babuška'),
+(null,'Som'),
+(null,'Štuka'),
+(null,'Smuđ');
+
+select * from dozvola;
+-- 2
+
+insert into dozvola(sifra,trajanje,cijena)
+-- 1 do 3
+values
+(null,20230522,55),
+(null,20230421,55),
+(null,20230303,55);
+
+
+select * from clan;
+-- 3
+insert into clan(sifra,ime,prezime,oib,kontakt,dozvola)
+-- 1 do 3
+values
+(null,'Ivan','Ivić',12345678958,32883833,1),
+(null,'Anto','Anić',54378963254,32555888,2),
+(null,'Sanja','Sanjić',45678963251,32555888,3);
 
