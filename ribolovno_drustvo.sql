@@ -36,7 +36,6 @@ create table clan(
 create table ulov(
  sifra int not null primary key auto_increment, 
  clan int not null,
- dozvola int not null,
  vrstaRibe int not null ,
  tezina decimal(18.2),
  natjecanje int not null
@@ -47,8 +46,8 @@ foreign key (dozvola) references dozvola(sifra);
 alter table ulov add 
 foreign key (clan) references clan(sifra);
 alter table ulov add 
-foreign key (dozvola) references dozvola(sifra);
-alter table ulov add 
 foreign key (vrstaRibe) references vrstaRibe(sifra);
 alter table ulov add 
 foreign key (natjecanje) references natjecanje(sifra);
+
+
