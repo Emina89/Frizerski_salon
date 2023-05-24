@@ -7,9 +7,11 @@ use ribolovno_drustvo;
 
 create table dozvola(
  sifra int not null primary key auto_increment, 
- trajanje datetime,
- cijena decimal(18.2)
+ trajanje date,
+ cijena decimal(18.2),
+ clan int not null
  );
+
 
 create table vrstaRibe(
  sifra int not null primary key auto_increment, 
@@ -18,9 +20,8 @@ create table vrstaRibe(
 
 create table natjecanje(
  sifra int not null primary key auto_increment, 
- brojNatjecatelja varchar(50),
  rezultat varchar(50),
- datum_vrijeme datetime, 
+ datum  date, 
  rijeka_jezero varchar(50)
 );
 
@@ -30,7 +31,7 @@ create table clan(
  prezime varchar(50)not null,
  oib varchar(50)not null,
  kontakt int (50) not null,
- dozvola int not null
+ ribolovnoDrustvo varchar (50),
 );
 
 create table ulov(
@@ -41,8 +42,8 @@ create table ulov(
  natjecanje int not null
 );
 
-alter table clan add 
-foreign key (dozvola) references dozvola(sifra);
+alter table dozvola add 
+foreign key (clan) references clan(sifra);
 alter table ulov add 
 foreign key (clan) references clan(sifra);
 alter table ulov add 
@@ -62,21 +63,39 @@ values
 (null,'Štuka'),
 (null,'Smuđ');
 
-select * from dozvola;
--- 2
-
-insert into dozvola(sifra,trajanje,cijena)
--- 1 do 3
-values
-(null,20230522,55),
-(null,20230421,55),
-(null,20230303,55);
-
 
 select * from clan;
+-- 2
+insert into clan(sifra,ime,prezime,oib,kontakt,ribolovnoDrustvo)
+-- 1 do 4
+values
+(null,'Ivan','Ivić','12345678958','32883833','Stari Šaran'),
+(null,'Matija','Matej','12345696325','32886597','Kečiga'),
+(null,'Anto','Bandić','45678932581','32569874','Smuđ'),
+(null,'Goran','Simić','12369857458','32569789','Spačva');
+
+select * from natjecanje;
 -- 3
-insert into clan(sifra,ime,prezime,oib,kontakt,dozvola)
+insert into natjecanje(sifra,rezultat,datum,rijeka_jezero)
+-- 1 do 2
+values
+(null,1,20230522,'Sava'),
+(null,2,20230522,'Sava');
+
+select * from dozvola;
+-- 4
+
+insert into dozvola(sifra,trajanje,cijena,clan)
 -- 1 do 3
+values 
+(null,20230523,55.70,1),
+(null,20230421,45,2),
+(null,20230331,60,3);
+
+select from * ulov;
+-- 5
+insert into ulov(sifra,clan,vrstaRibe,težina,natjecanje)
+-- 1 do 2
 values
 (null,'Ivan','Ivić',12345678958,32883833,1),
 (null,'Anto','Anić',54378963254,32555888,2),
