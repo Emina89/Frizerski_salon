@@ -1,5 +1,5 @@
 
-# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\pcservis\Documents\djecija_igraona\djecija_igraona.sql
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\pcservis\Documents\GitHub\jp28\djecija_igraona.sql
 
 
 drop database if exists djecija_igraona;
