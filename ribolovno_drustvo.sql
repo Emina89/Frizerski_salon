@@ -97,7 +97,11 @@ select from * ulov;
 insert into ulov(sifra,clan,vrstaRibe,težina,natjecanje)
 -- 1 do 2
 values
-(null,'Ivan','Ivić',12345678958,32883833,1),
-(null,'Anto','Anić',54378963254,32555888,2),
-(null,'Sanja','Sanjić',45678963251,32555888,3);
+(null,1,1,2.500,1),
+(null,2,2,1.800,2);
+
+
+
+
+
 
