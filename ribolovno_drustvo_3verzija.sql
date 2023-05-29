@@ -88,9 +88,9 @@ select * from dozvola;
 insert into dozvola(sifra,trajanje,cijena,clan)
 -- 1 do 3
 values 
-(null,20230523,55.70,1),
-(null,20230421,45,2),
-(null,20230331,60,3);
+(null,'2023-05-23',55.70,1),
+(null,'2023-04-21',45,2),
+(null,'2023-03-31',60,3);
 
 select * from ulov;
 -- 5
