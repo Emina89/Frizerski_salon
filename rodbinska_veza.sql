@@ -152,6 +152,12 @@ select * from cura;
 
 update cura set gustoca=15.77;
 
+-- delete 
+
+select * from mladic;
+
+delete  from mladic where kuna >15.78;
+
 
 
 
