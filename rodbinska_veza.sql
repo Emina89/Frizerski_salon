@@ -90,35 +90,44 @@ references muskarac(sifra);
 alter table cura add foreign key (punac)
 references punac(sifra);
 
+-- select 
 
 select * from sestra;
+-- 1
 
 insert into sestra (sifra,introvertno,haljina,maraka,hlace,narukvica) 
 values
+-- 1 do 3
 (null,(1),'cvijetna',null,'traper',585),
 (null,(0),'traper',11.23,'crne',925),
 (null,(1),'maxi',12.2,'kratke',585);
 
 select * from zena;
+-- 2
 
 insert into zena (sifra,treciputa,hlace,kratkamajica,jmbag,bojaociju,haljina,sestra) 
 values
-(null,'2023-04-23',null,'crna','12398076543','plava','kratka',10),
-(null,'2022-09-08','jeans','cvijetna','99977654324','siva','maxi',11),
-(null,'2023-08-08','kratke','crvena','11145367893','zelena',null,12);
+-- 1 do 3
+(null,'2023-04-23',null,'crna','12398076543','plava','kratka',2),
+(null,'2022-09-08','jeans','cvijetna','99977654324','siva','maxi',3),
+(null,'2023-08-08','kratke','crvena','11145367893','zelena',null,1);
 
 select * from muskarac;
+-- 3
 
 insert into muskarac (sifra,bojaociju,hlace,modelnaocala,maraka,zena) 
 values
+-- 1 do 3
 (null,'zelena','kratke',null,12.12,2),
 (null,'siva','jeans','Guess',12.15,3),
 (null,'plave','crne','CK',15.12,1);
 
 select * from svekar;
+-- 4
 
 insert into svekar(sifra,bojaociju,prstena,dukserica,lipa,eura,majica)
 values
+-- 1 do 3
 (null,'zelena',585,'ljubičasta',12.12,12.12,'crna'),
 (null,'plava',925,'crna',5.12,9.13,'kratka'),
 (null,'zelena',585,'duga',12.13,1.23,'plava');
@@ -126,12 +135,24 @@ values
 
 
 select * from sestra_svekar;
+-- 5
 
 insert into sestra_svekar (sifra,sestra,svekar) 
 values
-(null,10,1),
-(null,11,2),
-(null,12,3);
+-- 1 do 3
+(null,2,1),
+(null,3,2),
+(null,1,3);
+
+
+
+-- update 
+
+select * from cura;
+
+update cura set gustoca=15.77;
+
+
 
 
 
