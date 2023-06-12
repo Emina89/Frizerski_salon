@@ -158,6 +158,10 @@ select * from mladic;
 
 delete  from mladic where kuna >15.78;
 
+-- select 
+
+select kratkamajica from zena where hlace like '%ana%';
+
 
 
 
