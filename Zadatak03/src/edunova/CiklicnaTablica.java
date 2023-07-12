@@ -12,12 +12,17 @@ public class CiklicnaTablica {
 		int[][]tablica = new int [red][stupac];
 		int broj = 1;
 		
-		int a = red -1 ;      //Prvi red
+		
+		int a = red - 1;      //Prvi red
 		int b = stupac - 1;   //Prvi stupac
+		
+		for (a = 0; a < red; a++) {
+			for(b = 0; b < stupac; b++) {
+				}
 		
 	int count = 0;         //Brojač
 		
-		            // Uvijet
+		            // Petlja
 		while(count < red * stupac) {
 			tablica[a][b] = broj;
 		
@@ -55,10 +60,8 @@ public class CiklicnaTablica {
 			broj++;
 			count++;
 			
-			       // Ispis tablice - for
-			for (a = 0; a < red; a++) {
-				for(b = 0; b < stupac; b++) {
-					}
+			       // Ispis tablice 
+			
 				System.out.print(tablica[a][b] + "\t");
 			}
 			System.out.println();
